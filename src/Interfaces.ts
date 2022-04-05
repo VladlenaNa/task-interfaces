@@ -1,3 +1,6 @@
+import { Agent } from "http";
+import { stringify } from "querystring";
+
 export interface IPersonData {
     name: string;
     secondName: string;
@@ -11,7 +14,7 @@ export function getPerson(): IPersonData {
     return {
         name: 'Petr',
         secondName: 'Smith',
-        age: '7',
+        age: 7,
     };
 }
 
@@ -26,7 +29,27 @@ export interface IStudentData {
 Допишите функцию `getStudentsData` так, чтобы она возвращала массив из указанных в комментарии данных.
 Данные должны храниться в объектах, соответствующих интерфейсу `IStudentData`.
  */
+
 export function getStudentsData(): IStudentData[] {
+    const obj: IStudentData[] = [
+        {
+            name: "Ivan",
+            secondName: "Petrov",
+            age: 20,
+            phone: "+7(555)555-55-50"
+        },
+        {
+            name: "Stepan",
+            secondName: "Petrov",
+            age: 19,
+            phone: "+7(555)555-55-51"
+        },
+        {   name: "Petr",
+            secondName: "Ivanov",
+            age: 19,
+        }
+    ]
+    return obj
     /**
      * Данные студентов которые нужно передать:
      *
